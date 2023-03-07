@@ -17,13 +17,13 @@ Before proceeding with the SDS-Recorder setup and integration, make sure you hav
 
 To build the SDS-Recorder on the B-U585I-IOT02A Discovery kit using Keil MDK, follow these steps:
 
-1. Clone the SDS-Framework repository from GitHub. 
-2. Connect the STM32U5 board to your computer via USB.
-3. Open Demo.Debug+HW.uvprojx in Keil MDK. 
-4. Configure Host PC IP Address:
+- Clone the SDS-Framework repository from GitHub. 
+- Connect the STM32U5 board to your computer via USB.
+- Open Demo.Debug+HW.uvprojx in Keil MDK. 
+- Configure Host PC IP Address:
    - Modify the following definitions in [sdsio_socket.c](../sds/source/sdsio_socket.c):
    - `SERVER_IP`: IP address of the host PC running python script (`SDS-Socket.py`)
-5. Configure WiFi Access Point:
+- Configure WiFi Access Point:
    - Modify the following definitions in [socket_startup.c](Socket/WiFi/socket_startup.c):
    - `SSID`:          WiFi Access Point SSID
    - `PASSWORD`:      WiFi Access Point Password
