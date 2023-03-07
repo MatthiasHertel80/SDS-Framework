@@ -30,7 +30,7 @@ To build the SDS-Recorder on the B-U585I-IOT02A Discovery kit using Keil MDK, fo
    - `SECURITY_TYPE`: WiFi Access Point Security
 
 
-4. Once the build is complete, flash the firmware to the STM32U5 board using the Flash button from the toolbar.
+- Once the build is complete, flash the firmware to the STM32U5 board using the Flash button from the toolbar.
 
 ## Step 2: Run the SDS-Socket and record data
 
