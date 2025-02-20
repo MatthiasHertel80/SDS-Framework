@@ -21,7 +21,7 @@ Demo is available for the following targets:
  - WiFi Access Point (board and PC connected to the same local network)
 
 ### Software:
- - [CMSIS-Toolbox 1.4.0](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/tag/1.4.0) or later
+ - [CMSIS-Toolbox 1.5.0](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/tag/1.5.0) or later
  - Arm Compiler 6.18 or later
  - [python 3.9 or later](https://www.python.org/downloads/windows/)
 
@@ -67,7 +67,7 @@ Use a programmer to download the HW image to the hardware target.
 ### HW Target (B-U585I-IOT02A)
 
 Execute the following steps:
- - run `python ../utilities/SDS-Socket/SDS-Socket.py` to start the socket server on the host PC
+ - run [SDSIO-Server](../utilities/SDSIO-Server/README.md) to start the SDS I/O server on the host PC
  - connect the board's ST-Link USB to the PC (provides also power)
  - open terminal on the PC and connect to the board's serial port (Baud rate: 115200)
  - reset the target (press RST button on the board)
@@ -82,7 +82,7 @@ Sensor data is recorded to files `<sensor_name>.<index>.sds` and also printed to
 Execute the following steps:
  - run the VHT model from the command line by executing:
    ```
-   VHT_MPS3_Corstone_SSE-300 -f Board/AVH_MPS3_Corstone-300/fvp_config.txt -V ../sensor/vsi/python out/Demo/AVH/Debug/Demo.Debug+AVH.axf
+   VHT_MPS3_Corstone_SSE-300 -f Board/AVH_MPS3_Corstone-300/fvp_config.txt -V ../sensor/vsi/python out/Demo/AVH/Debug/Debug+AVH.axf
    ```
  - press PB0 (vioBUTTON0) button (double click PB0 in the VHT visualization dialog)
    to start/stop reading sensor data

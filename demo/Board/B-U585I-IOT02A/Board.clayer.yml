@@ -1,43 +1,42 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.4/tools/projmgr/schemas/clayer.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/1.5.0/tools/projmgr/schemas/clayer.schema.json
 
 layer:
-  # type: Board
+  type: Board
   # name: B-U585I-IOT02A
   # variant: IoT-WiFi
   description: Board setup for IoT with WiFi interface
-  # for-board: B-U585I-IOT02A
+  for-board: STMicroelectronics::B-U585I-IOT02A
 
-  # interfaces:
-  #   - consumes:
-  #     - RTOS2:
-  #   - provides:
-  #     - C_WiFi: 0
-  #     - A_UART: 3
-  #     - A_SPI: 1
-  #     - A_IO9_I:
-  #     - A_IO10_O:
-  #     - C_VIO:
-  #     - STDOUT:
-  #     - STDIN:
-  #     - STDERR:
-  #     - Heap : 65536
+  connections:
+    - connect: B-U585I-IOT02A Board
+      consumes:
+        - CMSIS-RTOS2
+      provides:
+        - CMSIS_WiFi: 0
+        - CMSIS_VIO
+        - ARDUINO_UNO_UART: 3
+        - ARDUINO_UNO_SPI: 1
+        - STDIN
+        - STDOUT
+        - STDERR
+        - Heap: 65536
 
-  # packs:
-  #   - pack: ARM::CMSIS
-  #   - pack: Keil::ARM_Compiler
-  #   - pack: Keil::STM32U5xx_DFP@1.2.0
-  #   - pack: Keil::B-U585I-IOT02A_BSP@1.0.0
+  packs:
+    - pack: Keil::STM32U5xx_DFP@2.0.0
+    - pack: Keil::B-U585I-IOT02A_BSP@1.0.0
+    - pack: ARM::CMSIS@5.9.0
+    - pack: Keil::ARM_Compiler@1.7.2
 
   processor:
     trustzone: off
 
-  add-paths:
+  add-path:
     - .
     - ./Driver
     - ../../../sensor/include
     - ../../../audio/include
 
-  defines:
+  define:
     - MX_WIFI_SPI_DMA=0   # Do not use DMA if TZEN=1
 
   components:
